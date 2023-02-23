@@ -1,23 +1,26 @@
-import { Fragment } from 'react'
-import { Grid } from '@mui/material'
-import BaseChatComponent from './components/Chat/BaseChatComponent';
-import './App.css';
-import BaseContactComponent from './components/Contacts/BaseContactComponent';
+import { Fragment, useEffect, useState } from 'react';
+import BaseApp from './BaseApp';
+import Loader from './components/Loader/Loader';
+import { fetchContact } from './store/slices/contacts';
+import { useDispatch } from 'react-redux';
+
 
 function App() {
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
+
+  async function getContacts() {
+    await dispatch(fetchContact());
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    getContacts();
+  }, []);
+
   return (
     <Fragment>
-      <div className='navbar'>
-        <h1>Gvine Chat</h1>
-      </div>
-      <Grid container className='app-container'>
-        <Grid item lg={3} className='contact-container' sx={{overflowY: 'auto'}}>
-          <BaseContactComponent/>
-        </Grid>
-        <Grid item lg={9} className='message-container'>
-          <BaseChatComponent/>
-        </Grid>
-      </Grid>
+      {loading ? <Loader/> : <BaseApp/>}
     </Fragment>
   )
 }
