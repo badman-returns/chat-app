@@ -1,0 +1,19 @@
+.chat-footer-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    background-color: #242424;
+    min-height: 7vh;
+    max-height: 7vh;
+    border-bottom-right-radius: 1rem;
+}
+
+.textbox {
+    background: #414141;
+    min-width: 78rem ;
+    height: 3rem ;
+    border-radius: 1rem;
+    color: #fff !important;
+    padding: 10px;
+}
