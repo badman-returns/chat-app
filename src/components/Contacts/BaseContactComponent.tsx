@@ -13,7 +13,7 @@ export default function BaseContactComponent() {
                         <Typography variant='h5' sx={{ fontWeight: 600 }}>Messages</Typography>
                     </Box>
                     <Box paddingRight='2rem'>
-                        <EditIcon sx={{ color: 'orange' }} />
+                        <EditIcon sx={{ color: '#268d61' }} />
                     </Box>
                 </Box>
                 <Box>
