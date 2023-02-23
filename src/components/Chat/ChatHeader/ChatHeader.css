@@ -1,0 +1,9 @@
+.chat-header-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    background-color: #242424;
+    min-height: 7vh;
+    border-top-right-radius: 1rem;
+}
