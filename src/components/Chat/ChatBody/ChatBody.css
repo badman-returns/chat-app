@@ -1,0 +1,27 @@
+.chat-body-container{
+    min-height: 76vh;
+    width: 100%;
+    padding: 2rem;
+}
+
+.message-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #34383b;
+    max-height: 2rem;
+    padding: 1.5rem;
+    max-width: max-content;
+}
+
+.recieved-text{
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.sent-text{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
