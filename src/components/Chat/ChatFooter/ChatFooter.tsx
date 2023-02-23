@@ -12,7 +12,7 @@ export default function ChatFooter() {
                     <Stack direction='row' gap={2}>
                         <Input fullWidth disableUnderline className='textbox' placeholder='Start typing message' />
                         <Box display='flex' alignItems='center'>
-                            <SendIcon sx={{color: 'orange'}}/>
+                            <SendIcon sx={{color: '#268d61'}}/>
                         </Box>
                     </Stack>
                 </Grid>
