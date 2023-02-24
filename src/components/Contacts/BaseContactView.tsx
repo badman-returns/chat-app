@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux';
 
 export default function BaseContactView() {
     const { contacts } = useSelector(contactSelector);
-    console.log(contacts);
     return (
         <Fragment>
             <Stack direction='column' gap={2}>
@@ -26,7 +25,7 @@ export default function BaseContactView() {
                         {
                             contacts.map((contact: IContact) => {
                                 const { id, name, picture, lastChat, latest_timestamp } = contact;
-                                return <ContactCard key={id} name={name} picture={picture} lastChat={lastChat} latest_timestamp={latest_timestamp} />
+                                return <ContactCard key={id} id={id} name={name} picture={picture} lastChat={lastChat} latest_timestamp={latest_timestamp} />
                             })
                         }
                     </Stack>
