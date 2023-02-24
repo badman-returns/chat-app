@@ -1,5 +1,5 @@
 export interface IContact{
-    id?: number,
+    id: number,
     name: string
     picture: string
     latest_timestamp: string,
