@@ -1,32 +1,41 @@
 import { Grid } from '@mui/material';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
+import { ChatLog } from '../../../interface/chat';
 import './ChatBody.css';
 
-export default function ChatBody() {
-    const messages = [
-        {
-            text: 'Hi, how are you?',
-            type: 'recieved'
-        },
-        {
-            text: 'Hey, I am good, what about you?',
-            type: 'sent'
-        }
-    ]
+interface IChatBody {
+    id:number,
+    chatlog: ChatLog[]
+}
+
+export default function ChatBody({ id, chatlog }: IChatBody) {
+    const messageEnd = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        console.log('effect');
+            messageEnd.current?.scrollIntoView({
+                block: "end",
+                inline: "nearest",
+                behavior: "auto"
+            })
+        
+    }, [id])
+
     return (
         <Fragment>
-            <Grid className='chat-body-container'>
+            <Grid className='chat-body-container' sx={{ overflowY: "auto" }}>
                 {
-                    messages.map((message) => {
+                    chatlog.map((chat: ChatLog) => {
                         return (
-                            <Grid container display='flex' flexDirection='column' alignItems={message.type === 'recieved' ? 'flex-start' : 'flex-end'}>
-                                <Grid item className={message.type == 'recieved' ? 'message-card recieved-text' : ' message-card sent-text'}>
-                                    {message.text}
+                            <Grid key={chat.message_id + Math.random()} container display='flex' flexDirection='column' alignItems={chat.type === 'recieved' ? 'flex-start' : 'flex-end'} sx={{ marginBottom: "2rem" }}>
+                                <Grid item className={chat.type == 'recieved' ? 'message-card recieved-text' : ' message-card sent-text'}>
+                                    {chat.text}
                                 </Grid>
                             </Grid>
                         )
                     })
                 }
+                <div ref={messageEnd}></div>
             </Grid>
 
         </Fragment>

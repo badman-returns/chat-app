@@ -1,5 +1,6 @@
 .chat-body-container{
     min-height: 74vh;
+    max-height: 74vh;
     width: 100%;
     padding: 2rem;
 }
@@ -9,18 +10,19 @@
     justify-content: center;
     align-items: center;
     background-color: #34383b;
-    max-height: 2rem;
-    padding: 1.5rem;
-    max-width: max-content;
+    padding: 1rem;
+    max-width: 40rem;
 }
 
 .recieved-text{
+    line-height: 1.5rem;
     border-top-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 }
 
 .sent-text{
+    line-height: 1.5rem;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
