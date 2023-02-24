@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Typography } from '@mui/material'
 import { Box, Stack } from '@mui/system'
 import EditIcon from '@mui/icons-material/Edit';
@@ -6,9 +6,16 @@ import ContactCard from './ContactCard/ContactCard';
 import { IContact } from '../../interface/contact';
 import { contactSelector } from '../../store/slices/contacts';
 import { useSelector } from 'react-redux';
+import './BaseContactView.css'
 
 export default function BaseContactView() {
     const { contacts } = useSelector(contactSelector);
+    const [activeItem, setActiveItem] = useState<Number>();
+
+    function setContactStyleOnActive(id: number) {
+        setActiveItem(id);
+    }
+
     return (
         <Fragment>
             <Stack direction='column' gap={2}>
@@ -25,7 +32,11 @@ export default function BaseContactView() {
                         {
                             contacts.map((contact: IContact) => {
                                 const { id, name, picture, lastChat, latest_timestamp } = contact;
-                                return <ContactCard key={id} id={id} name={name} picture={picture} lastChat={lastChat} latest_timestamp={latest_timestamp} />
+                                return (
+                                    <div onClick={() => setContactStyleOnActive(id)} className={id === activeItem ? "active" : ""}>
+                                        <ContactCard key={id} id={id} name={name} picture={picture} lastChat={lastChat} latest_timestamp={latest_timestamp} />
+                                    </div>
+                                )
                             })
                         }
                     </Stack>
