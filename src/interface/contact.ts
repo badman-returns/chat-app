@@ -4,4 +4,5 @@ export interface IContact{
     picture: string
     latest_timestamp: string,
     lastChat:string
+    isLatest:boolean
 }
