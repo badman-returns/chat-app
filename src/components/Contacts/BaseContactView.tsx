@@ -15,7 +15,6 @@ export default function BaseContactView() {
     function setContactStyleOnActive(id: number) {
         setActiveItem(id);
     }
-
     return (
         <Fragment>
             <Stack direction='column' gap={2}>
@@ -31,10 +30,10 @@ export default function BaseContactView() {
                     <Stack direction='column'>
                         {
                             contacts.map((contact: IContact) => {
-                                const { id, name, picture, lastChat, latest_timestamp } = contact;
+                                const { id, name, picture, lastChat, latest_timestamp, isLatest } = contact;
                                 return (
-                                    <div onClick={() => setContactStyleOnActive(id)} className={id === activeItem ? "active" : ""}>
-                                        <ContactCard key={id} id={id} name={name} picture={picture} lastChat={lastChat} latest_timestamp={latest_timestamp} />
+                                    <div key={id+ Math.floor(Math.random()) * 10} onClick={() => setContactStyleOnActive(id)} className={id === activeItem ? "active" : ""}>
+                                        <ContactCard key={id+ Math.floor(Math.random()) * 10} id={id} name={name} picture={picture} lastChat={lastChat} latest_timestamp={latest_timestamp} isLatest={isLatest} />
                                     </div>
                                 )
                             })
