@@ -5,17 +5,25 @@ import { IContact } from "../../interface/contact";
 type ContactState = { contacts: IContact[] };
 const initialState: ContactState = { contacts: [] };
 
+interface LatestMessage{
+    id: any,
+    isLatest: boolean
+}
+
 const contactSlice = createSlice({
     name: 'contacts',
     initialState,
     reducers: {
         storeContacts: (state, action: PayloadAction<ContactState>) => {
             state.contacts = action.payload.contacts;
+        },
+        getLatestMessage:(state, action: PayloadAction<LatestMessage>) => {
+            state.contacts[action.payload.id].isLatest = action.payload.isLatest
         }
     }
 });
 
-export const { storeContacts } = contactSlice.actions;
+export const { storeContacts, getLatestMessage } = contactSlice.actions;
 
 export const contactSelector = (state: any) => state.rootReducer.contacts || {};
 
