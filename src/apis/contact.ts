@@ -1,8 +1,9 @@
 import axios from "axios";
+import { mockApi } from "./baseapi";
 
 export async function getContacts(){
     try {
-        const response = await axios.get(`http://localhost:3001/contacts`);
+        const response = await mockApi.get(`/contacts`);
         if(response.status === 200){
             return response.data;
         }
