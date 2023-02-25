@@ -1,31 +1,48 @@
-
 <h1 align="center">
-    Welcome to the Grapevine Interview Process!
+    Gvine Chat
 </h1>
+Gvine chat is a chat application that lets you send and recieve messages. As of now there is no backend or data store, so the simulation of sending and recieving messages is done over mock data. User can view coversation for their respective contacts and also can send and recieve messages as simulation.
+<br></br
 
-Thank you for investing time with [Grapevine](https://gvine.app) and congratulations on making it this far in the interview process. This is a confidential document. Do not share this with anyone. This project is designed to serve as a representative model of the engineering process that we follow at Grapevine. It helps us benchmark all engineers on a common ground via this or a similar assignment.
+![gvine-chat](https://user-images.githubusercontent.com/37118964/221347959-878b6cd5-c417-4b33-9e5b-ec1ff8e02bed.png)
 
-### [Specification Document »](Spec.md)
 
-## ℹ️ How this works
+## 🏁 Features
+1. A user should be able to initiate conversations with another user based on the username.
+2. A user should be able to have conversations with multiple users
+3. A history of all messages should be stored for reference by the user later
 
-1. **Start:** You receive access to this repository, which contains this README and a [specification document](Spec.md) that describes the project.
-2. **Code:** You independently work on code that aims to fulfill the specification document.
-3. **Debrief:** We meet for 30m to discuss the code you've written in an open-ended way, particular implementation choices you made, changing requirements, etc.
+### 💡 How it works
+1. This is a fully frontend application without any backend or data store.
+2. We are using mock data to get contacts and conversation.
+3. For recieving messages we have created a polling where last message of contacts will be marked as latest for simulation. Clicking on new message will append the last message to chat.
+4. While sending messages also it will be pushed to existing chat data but will not be persistant as there is not database.
+5. For every 20 seconds a flag called isLatest is going to get true for each contacts in order to simulate incoming messages.
 
-## 🏁 Goals
 
-1. We see how you work within a representative environment on representative problems.
-2. We see how you think and write code.
+### Tech Stacks
+ - React
+ - Typescript
+ - Redux Toolkit
+ - Material UI
+ - Axios 
+ - Mockoon
 
-## 💡 Tips
 
-1. Try to highlight both the depth and breadth of your experience. Use this project to showcase your strengths and development priorities.
-2. Candidates who spend *at least* 5 hours on this project tend to be more successful in our interview process, but there's no time limit (please see the prior tip).
-3. We do not expect a production-ready code base. Please feel free to "cut corners" where appropriate: data persistence, infrastructure, and polished front-end design are all areas that could be ignored (or, focused on, if that's your thing!).
-4. It's okay to reuse other code that you have written, as long as it fulfills the specification and you can explain how and why it works.
+### Instruction to build and run
+
+```
+1. Clone the repository
+2. Import the mock_db.json file in Mockoon.
+3. Start mockoon server.
+4. Navigate to src/api/baseapi.ts and replace the baseURL with mockoon server url
+3. npm install
+4. npm run dev - For runing development build
+5. npm run build - For creating production build
+6. npm run preview - For running production build
+
+```
 
 ---
-
-✉️ [Reach out to Ameya](mailto:ameya@gvine.app?subject=Messaging%20Interview) with any questions you have.
-
+### [Interview Docoment ](InterviewDoc.md)
+### [Specification Document »](Spec.md)
