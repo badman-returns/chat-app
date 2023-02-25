@@ -43,6 +43,12 @@ Gvine chat is a chat application that lets you send and recieve messages. As of 
 
 ```
 
----
 ### [Interview Docoment ](InterviewDoc.md)
 ### [Specification Document »](Spec.md)
+
+---
+### Reach out to me
+
+[![Facebook](https://img.shields.io/static/v1.svg?label=follow&message=@tsgoswami&color=black&logo=facebook&style=for-the-badge&logoColor=white&colorA=blue)](https://www.facebook.com/trishnangshu.goswami/) [![Instagram](https://img.shields.io/static/v1.svg?label=follow&message=@tsgoswami&color=black&logo=instagram&style=for-the-badge&logoColor=white&colorA=blue)](https://www.instagram.com/the_tsgoswami/) [![LinkedIn](https://img.shields.io/static/v1.svg?label=connect&message=@tsgoswami&color=black&logo=linkedin&style=for-the-badge&logoColor=white&colorA=blue)](https://www.linkedin.com/in/trishnangshugoswami/) [![Twitter](https://img.shields.io/static/v1.svg?label=connect&message=@tsgoswami&color=black&logo=twitter&style=for-the-badge&logoColor=white&colorA=blue)](https://twitter.com/ts_goswami)
+
+> Made with 🖤 by Trishnangshu Goswami
