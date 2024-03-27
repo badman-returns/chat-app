@@ -1,5 +1,5 @@
 <h1 align="center">
-    Gvine Chat
+ Chat App
 </h1>
 Gvine chat is a chat application that lets you send and recieve messages. As of now there is no backend or data store, so the simulation of sending and recieving messages is done over mock data. User can view coversation for their respective contacts and also can send and recieve messages as simulation.
 <br></br
